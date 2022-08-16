@@ -1,0 +1,35 @@
+####Get
+GET http://localhost:3000/lists
+Accept: application/json
+
+
+####Post
+POST http://localhost:3000/lists
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "new list"
+}
+
+####Patch
+PATCH http://localhost:3000/lists/7
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "PATCD"
+}
+
+####Delete
+DELETE http://localhost:3000/lists/4
+
+####Put task
+PUT http://localhost:3000/tasks/7
+Accept: application/json
+Content-Type: application/json
+
+{
+  "description": "New description",
+  "listId": 9
+}
