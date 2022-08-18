@@ -1,3 +1,5 @@
+/////LISTS
+
 ####Get
 GET http://localhost:3000/lists
 Accept: application/json
@@ -24,6 +26,37 @@ Content-Type: application/json
 ####Delete
 DELETE http://localhost:3000/lists/4
 
+////TASKS
+
+####Get
+GET http://localhost:3000/tasks
+Accept: application/json
+
+####Post
+POST http://localhost:3000/tasks
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "new task2",
+  "due_date": "2022-08-19",
+  "done": false,
+  "description": "description of new task2",
+  "listId": 5
+}
+
+####Patch
+PATCH http://localhost:3000/tasks/7
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "PATCD"
+}
+
+####Delete
+DELETE http://localhost:3000/tasks/4
+
 ####Put task
 PUT http://localhost:3000/tasks/7
 Accept: application/json
@@ -33,3 +66,6 @@ Content-Type: application/json
   "description": "New description",
   "listId": 9
 }
+
+####Dashboard
+GET http://localhost:3000/dashboard

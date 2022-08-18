@@ -3,6 +3,7 @@ import {AppDataSource} from "./data-source"
 import express from "express";
 import {listRoutes} from "./lists/list.routes";
 import {taskRoutes} from "./tasks/task.routes";
+import {collectionTodayRoutes} from "./collectionToday/collectionToday.routes";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(logRequest);
 app.use(listRoutes);
 app.use(taskRoutes);
+app.use(collectionTodayRoutes);
 
 AppDataSource.initialize().then(() => {
     app.listen(PORT, () => console.log('Server started on port: ' + PORT));
