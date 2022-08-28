@@ -10,8 +10,8 @@ export class Task {
     @Column({nullable: true})
     name: string
 
-    @Column({nullable: true})
-    due_date: Date
+    @Column({nullable: true, type: "date"})
+    dueDate: Date
 
     @Column()
     done: boolean = false

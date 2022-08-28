@@ -39,10 +39,10 @@ Content-Type: application/json
 
 {
   "name": "new task2",
-  "due_date": "2022-08-19",
+  "dueDate": "2022-08-21",
   "done": false,
   "description": "description of new task2",
-  "listId": 5
+  "listId": 8
 }
 
 ####Patch
@@ -68,4 +68,4 @@ Content-Type: application/json
 }
 
 ####Dashboard
-GET http://localhost:3000/dashboard
+GET http://localhost:3000/collection/today
