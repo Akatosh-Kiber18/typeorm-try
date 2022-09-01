@@ -40,7 +40,12 @@ async function getTaskHandler(req, res) {
     if (!id) {
         return res.sendStatus(404);
     }
-    return res.json(await taskRepository.findOneBy({id: id}))
+    return res.json(await taskRepository.findOne({
+        relations: ['list'],
+        where: {
+            id: id
+        }
+    }))
 }
 
 async function patchTaskHandler(req, res) {

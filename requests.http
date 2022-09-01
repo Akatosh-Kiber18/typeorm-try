@@ -11,7 +11,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "new list"
+  "name": "Must have"
 }
 
 ####Patch
@@ -29,7 +29,7 @@ DELETE http://localhost:3000/lists/4
 ////TASKS
 
 ####Get
-GET http://localhost:3000/tasks
+GET http://localhost:3000/tasks/75
 Accept: application/json
 
 ####Post
@@ -38,11 +38,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "new task2",
+  "name": "new task3",
   "dueDate": "2022-08-21",
   "done": false,
-  "description": "description of new task2",
-  "listId": 8
+  "description": "description of new task3",
+  "listId": 22
 }
 
 ####Patch
