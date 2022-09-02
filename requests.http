@@ -1,7 +1,7 @@
 /////LISTS
 
 ####Get
-GET http://localhost:3000/lists
+GET http://localhost:3000/lists/40
 Accept: application/json
 
 
