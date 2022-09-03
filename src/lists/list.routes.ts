@@ -28,7 +28,8 @@ async function getListsHandler(req, res) {
         select: {
             id: true,
             name: true
-        }
+        },
+        relations: ['tasks']
     }))
 }
 
