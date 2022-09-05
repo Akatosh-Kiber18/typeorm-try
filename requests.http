@@ -1,7 +1,7 @@
 /////LISTS
 
 ####Get
-GET http://localhost:3000/lists/40
+GET http://localhost:3000/lists/43
 Accept: application/json
 
 
@@ -68,4 +68,4 @@ Content-Type: application/json
 }
 
 ####Dashboard
-GET http://localhost:3000/collection/today
+GET http://localhost:3000/today

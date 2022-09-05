@@ -6,13 +6,19 @@ import {Between} from "typeorm";
 export const collectionTodayRoutes = Router();
 const taskRepository = AppDataSource.getRepository(Task);
 
-collectionTodayRoutes.get('/collection/today', todayTasksHandler)
+collectionTodayRoutes.get('/today', todayTasksHandler)
 
 async function todayTasksHandler(req, res) {
     const date = new Date();
     const tasks = await taskRepository.find({
         relations: ['list'],
-        where: {dueDate: Between(date, date)},
+        where: {
+            dueDate: Between(new Date('1980-01-01'), date),
+            done: false
+        },
+        order: {
+            dueDate: "ASC"
+        }
     });
     return res.json(tasks)
 }

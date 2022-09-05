@@ -25,10 +25,6 @@ async function postListHandler(req, res) {
 
 async function getListsHandler(req, res) {
     return res.json(await listRepository.find( {
-        select: {
-            id: true,
-            name: true
-        },
         relations: ['tasks']
     }))
 }
