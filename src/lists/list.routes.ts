@@ -34,11 +34,14 @@ async function getListHandler(req, res) {
     if (!id){
         return res.sendStatus(404);
     }
-    return res.json(await listRepository.findOne(
+
+    const list = await listRepository.findOne(
         {
             relations: ['tasks'],
             where:{id: id}
-        }))
+        })
+   const tasks = list.tasks
+    return res.json(tasks)
 }
 
 async function patchListHandler(req, res) {

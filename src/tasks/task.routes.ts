@@ -25,7 +25,14 @@ async function postTaskHandler(req, res) {
     task.list = listId;
     await taskRepository.save(task)
 
-    return res.json(task)
+    return res.json (await taskRepository.findOne({
+        relations: ['list'],
+        where: {
+            name,
+            dueDate,
+            description,
+        }
+    }))
 }
 
 async function getTasksHandler(req, res) {
@@ -50,12 +57,17 @@ async function getTaskHandler(req, res) {
 
 async function patchTaskHandler(req, res) {
     const id = parseInt(req.params.id);
-    const list = await taskRepository.findOneBy({id: id});
+    const task = await taskRepository.findOneBy({id: id});
     req.body.id = id;
-    Object.assign(list, req.body);
-    await taskRepository.save(list);
+    Object.assign(task, req.body);
+    await taskRepository.save(task);
 
-    return res.json(list);
+    return res.json(await taskRepository.findOne({
+        relations: ['list'],
+        where: {
+            id: id
+        }
+    }));
 }
 
 async function deleteTaskHandler(req, res) {

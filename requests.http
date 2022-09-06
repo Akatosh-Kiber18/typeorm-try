@@ -29,7 +29,7 @@ DELETE http://localhost:3000/lists/4
 ////TASKS
 
 ####Get
-GET http://localhost:3000/tasks/75
+GET http://localhost:3000/tasks
 Accept: application/json
 
 ####Post
@@ -42,16 +42,16 @@ Content-Type: application/json
   "dueDate": "2022-08-21",
   "done": false,
   "description": "description of new task3",
-  "listId": 22
+  "listId": 43
 }
 
 ####Patch
-PATCH http://localhost:3000/tasks/7
+PATCH http://localhost:3000/tasks/74
 Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "PATCD"
+  "name": "PATCDAGAIN"
 }
 
 ####Delete
