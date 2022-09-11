@@ -11,7 +11,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Must have"
+  "name": "Todo"
 }
 
 ####Patch
@@ -38,11 +38,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "new task3",
+  "name": "Play witcher",
   "dueDate": "2022-08-21",
   "done": false,
   "description": "description of new task3",
-  "listId": 43
+  "listId": 1
 }
 
 ####Patch
@@ -55,7 +55,7 @@ Content-Type: application/json
 }
 
 ####Delete
-DELETE http://localhost:3000/tasks/4
+DELETE http://localhost:3000/tasks/1
 
 ####Put task
 PUT http://localhost:3000/tasks/7

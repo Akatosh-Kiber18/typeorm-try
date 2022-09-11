@@ -25,7 +25,7 @@ async function postTaskHandler(req, res) {
     task.list = listId;
     await taskRepository.save(task)
 
-    return res.json (await taskRepository.findOne({
+    return res.json(await taskRepository.findOne({
         relations: ['list'],
         where: {
             name,
@@ -72,7 +72,10 @@ async function patchTaskHandler(req, res) {
 
 async function deleteTaskHandler(req, res) {
     const id = parseInt(req.params.id);
-    const task = await taskRepository.findOneBy({id: id});
+    const task = await taskRepository.findOne({
+        where: {id: id},
+        relations: ['list']
+    });
     if (!task) {
         return res.sendStatus(404);
     }
